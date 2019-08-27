@@ -1,16 +1,16 @@
 #include <Arduino.h>
 
-int Entero = 15;
-float Flotante = 10.45;
-double Mayor = 16.3456;
-char Letra = 'a';
-
-
 void setup() {
   Serial.begin(9600);
-  Serial.println(Entero);
+  pinMode(2,OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (Serial.available()>0){
+      char Dato = Serial.read();
+      if (Dato == 'A') digitalWrite(2,HIGH); 
+        else if (Dato == 'B') digitalWrite(2,LOW);
+        
+  }
+  
 }
