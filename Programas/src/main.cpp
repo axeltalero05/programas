@@ -1,16 +1,15 @@
 #include <Arduino.h>
 
+#define LED 2
+
 void setup() {
-  Serial.begin(9600);
-  pinMode(2,OUTPUT);
+  pinMode(LED,OUTPUT);
+  digitalWrite(LED,LOW);
 }
 
 void loop() {
-  if (Serial.available()>0){
-      char Dato = Serial.read();
-      if (Dato == 'A') digitalWrite(2,HIGH); 
-        else if (Dato == 'B') digitalWrite(2,LOW);
-        
-  }
-  
+  digitalWrite(LED,HIGH);
+  delay(500);
+  digitalWrite(LED,LOW);
+  delay(500);
 }
