@@ -1,15 +1,10 @@
 #include <Arduino.h>
 
-#define LED 2
-
 void setup() {
-  pinMode(LED,OUTPUT);
-  digitalWrite(LED,LOW);
+ Serial.begin(9600);
+ Serial.println("Hla Mundo");
 }
 
 void loop() {
-  digitalWrite(LED,HIGH);
-  delay(500);
-  digitalWrite(LED,LOW);
-  delay(500);
+  
 }
